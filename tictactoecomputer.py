@@ -95,7 +95,7 @@ def handle_computer_turn(computer):
 		elif board[computer_position] == "O":
 			valid = False		
 		else:
-			break
+			return None
 	
 	# Once we get position, put it in
 	board[computer_position] = computer
