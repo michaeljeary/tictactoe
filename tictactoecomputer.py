@@ -1,21 +1,10 @@
-# board
-# display board
-# function to play game - alternating turns
-# function to check if win
- # check rows
- # check columns
- # check diagonal
-# function to check if tie
-# flip back and forth between players
 from random import randint
 # Global Variables
-
 
 # empty game board
 board = ["-", "-", "-",
 		 "-", "-", "-", 
 		 "-", "-", "-"]
-
 
 # If the game is still going, run loop. Only flase when game over.
 game_still_going = True
@@ -23,11 +12,9 @@ game_still_going = True
 # Who won? or tie?
 winner = None
 
-
 # Who's turn is it?
 user_player = "X"
 computer_player = "O"
-
 
 def play_game():
 	# Display the initial board before starting
@@ -44,17 +31,13 @@ def play_game():
 		# If game is not over, flip to other player
 		flip_player()
 
-
-		
-
-	# Game over - this was not indented so wasnt calling.
+	
 	if winner == "X":
 		print("Congratulations, you won!")
 	elif winner == "O":
 		print("Bummer, the computer beat you.")
 	elif winner != "X" or "O":
 		print("Boring. A tie.")	
-
 
 # define our board
 def display_board():
@@ -96,7 +79,6 @@ def handle_turn(player):
 	# Then display the choice
 	display_board()
 
-
 def handle_computer_turn(computer):
 
 	print(computer + "'s turn.")
@@ -120,13 +102,10 @@ def handle_computer_turn(computer):
 	# Then display the choice
 	display_board()	
 
-
-
 def check_game_over():
 	# Call two more functions: win or tie. Two criteria for game ending
 	check_for_winner()
 	check_if_tie()
-
 
 def check_for_winner():
 	# Set up global variable
@@ -145,8 +124,6 @@ def check_for_winner():
 		winner = diagonal_winner
 	else:
 		winner = None
-
-
 	
 # Check each for 3 in a row, then return X or O, then quit the game.
 def check_rows():
@@ -219,7 +196,6 @@ def check_if_tie():
 	else:
 		return False		
 
-
 def flip_player():
 	# Global we need
 	global user_player
@@ -230,6 +206,5 @@ def flip_player():
 		computer_player = "O"
 	else:
 		user_player = "O"
-			
-
+		
 play_game()	
